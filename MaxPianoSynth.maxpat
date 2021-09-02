@@ -241,7 +241,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 42.0, 108.0, 1004.0, 781.0 ],
+						"rect" : [ 42.0, 108.0, 1004.0, 465.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -270,20 +270,6 @@
 						"subpatcher_template" : "",
 						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
-								"box" : 								{
-									"fontface" : 0,
-									"id" : "obj-4",
-									"linecount" : 22,
-									"maxclass" : "o.display",
-									"numinlets" : 1,
-									"numoutlets" : 1,
-									"outlettype" : [ "" ],
-									"patching_rect" : [ 472.0, 411.0, 373.0, 304.0 ],
-									"text" : "/input/keyboard : [0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.],\n/input/pedal/unacorda : 0,\n/input/pedal/sostenuto : 1,\n/input/pedal/sustain : 0,\n/player/keyboard : [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],\n/player/pedal/sustain : 0"
-								}
-
-							}
-, 							{
 								"box" : 								{
 									"id" : "obj-35",
 									"maxclass" : "newobj",
@@ -335,7 +321,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "FullPacket", "FullPacket" ],
 									"patching_rect" : [ 22.0, 242.0, 478.0, 87.0 ],
-									"text" : "/player/pedal/sustain = if(bound(/player/pedal/sustain), /player/pedal/sustain, 0),\n/player/keyboard = if(bound(/player/keyboard), /player/keyboard, nfill(128, 0)),\n/input/pedal/sustain = if(bound(/input/pedal/sustain), /input/pedal/sustain, 0),\n/input/pedal/sustain *= /player/pedal/sustain,\n/input/keyboard = round(127*(/input/keyboard*(1-/player/keyboard)+/player/keyboard))"
+									"text" : "/player/pedal/sustain = if(bound(/player/pedal/sustain), /player/pedal/sustain, 0),\n/player/keyboard = if(bound(/player/keyboard), /player/keyboard, nfill(128, 0)),\n/input/pedal/sustain = if(bound(/input/pedal/sustain), /input/pedal/sustain, 0),\n/input/pedal/sustain = /input/pedal/sustain | /player/pedal/sustain,\n/input/keyboard = round(127*(/input/keyboard*(1-/player/keyboard)+/player/keyboard))"
 								}
 
 							}
@@ -606,15 +592,6 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-29", 0 ],
-									"order" : 1,
-									"source" : [ "obj-6", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-4", 0 ],
-									"order" : 0,
 									"source" : [ "obj-6", 0 ]
 								}
 
@@ -6920,10 +6897,6 @@
 			}
 , 			{
 				"name" : "o.select.mxe64",
-				"type" : "mx64"
-			}
-, 			{
-				"name" : "o.display.mxe64",
 				"type" : "mx64"
 			}
  ],
